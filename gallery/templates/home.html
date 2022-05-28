@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+<div>
+    <h1>Hello</h1>
+</div>
+<div>
+    {% for item in image%}
+    <h2 class="text-center"> {{ item.name }} </h2>
+
+    {% empty %}
+        <div class="row">
+          <h2 class="text-center">No images present</h2>
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}

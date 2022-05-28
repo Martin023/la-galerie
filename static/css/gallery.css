@@ -1,0 +1,8 @@
+nav{
+    display: flex;
+}
+
+.collapse {
+    justify-content: center;
+    color: blue;
+}
