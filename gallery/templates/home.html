@@ -12,13 +12,15 @@
         <h5 class="text-center"> {{ item.name }} </h5>
         <img style=width:100% src="{{ item.image.url }}" class="img-responsive image" alt="{{item.name}}">
     
-        <p>Posted: {{item.date_added|timesince}}</p>
+       <div class="details">
+          <p>Posted: {{item.date_added|timesince}}</p>
 
-        {% empty %}
-        <div class="row">
+          {% empty %}
+         <div class="row">
           <h2 class="text-center">No images present</h2>
-        </div>
+          </div>
         {% endfor %}
+       </div>
     </div>
     
 </div>

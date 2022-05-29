@@ -13,7 +13,7 @@ class Category(models.Model):
 class Image(models.Model):
     name= models.CharField(max_length=40)
     image=CloudinaryField('image')
-    description=models.CharField(max_length=2000)
+    description=models.CharField(max_length=4000)
     date_added = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location,on_delete=models.DO_NOTHING )
     category = models.ForeignKey(Category,on_delete=models.DO_NOTHING )
