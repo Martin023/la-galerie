@@ -1,7 +1,7 @@
 
 from email.mime import image
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Location(models.Model):
     name= models.CharField(max_length=30)
@@ -12,7 +12,7 @@ class Category(models.Model):
 
 class Image(models.Model):
     name= models.CharField(max_length=40)
-    image=models.ImageField(upload_to='photos/')
+    image=CloudinaryField('image')
     description=models.CharField(max_length=2000)
     date_added = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location,on_delete=models.DO_NOTHING )

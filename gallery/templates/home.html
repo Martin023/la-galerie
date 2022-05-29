@@ -3,13 +3,13 @@
 {% block content %}
 {{block.super}}
 <div>
-    <h1>Hello</h1>
+    <h3>Hello welcome to La-gallarie</h3>
 </div>
 <div class="img-container">
     {% for item in image%}
     
     <h5 class="text-center"> {{ item.name }} </h5>
-    <img src="{{item.image.url}}" class="img-responsive" alt="buddha">
+    <img src="{{ item.image.url }}" class="img-responsive" alt="buddha">
     
     <p>Posted: {{item.date_added|timesince}}</p>
 
