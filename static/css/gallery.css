@@ -11,6 +11,7 @@
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 .all-items{
     display: flex;
@@ -32,5 +33,7 @@ nav{
     color:#fff;
 }
 .hero{
-    padding:5%
+    padding:5%;
+    display:flex;
+    justify-content: space-between;
 }

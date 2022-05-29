@@ -30,6 +30,11 @@ class Image(models.Model):
         image=cls.objects.all()
         return image
 
+    @classmethod
+    def search_by_name(cls,search_term):
+        photo = cls.objects.filter(title__icontains=search_term)
+        return photo
+
 
 
 
