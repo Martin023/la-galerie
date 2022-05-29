@@ -1,4 +1,12 @@
 
 .img-container{
+    width: 100%;
+    display:flex;
+   
+}
+.images {
     width: 30%;
+    border: 1px solid black ;
+    box-shadow: 3px rgb(105, 104, 104);
+    
 }

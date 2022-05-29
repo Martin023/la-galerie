@@ -6,17 +6,20 @@
     <h3>Hello welcome to La-gallarie</h3>
 </div>
 <div class="img-container">
-    {% for item in image%}
-    
-    <h5 class="text-center"> {{ item.name }} </h5>
-    <img src="{{ item.image.url }}" class="img-responsive" alt="buddha">
-    
-    <p>Posted: {{item.date_added|timesince}}</p>
 
-    {% empty %}
+    {% for item in image%}
+    <div class="images">
+        <h5 class="text-center"> {{ item.name }} </h5>
+        <img style=width:100% src="{{ item.image.url }}" class="img-responsive image" alt="{{item.name}}">
+    
+        <p>Posted: {{item.date_added|timesince}}</p>
+
+        {% empty %}
         <div class="row">
           <h2 class="text-center">No images present</h2>
         </div>
         {% endfor %}
+    </div>
+    
 </div>
 {% endblock %}
