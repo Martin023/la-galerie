@@ -17,3 +17,20 @@
     justify-content: center;
     gap: 3%;
 }
+.title{
+    padding: 2%;
+}
+.card-footer{
+    margin-bottom: 0%;
+}
+nav{
+    background-color: rgb(24, 24, 80);
+    color:#fff;
+}
+
+.navbar{
+    color:#fff;
+}
+.hero{
+    padding:5%
+}

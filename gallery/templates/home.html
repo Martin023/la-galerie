@@ -9,10 +9,10 @@
   <div class="row container-fluid all-items">
     {% for item in image%}
         <div class = "col-md-3 card" data-toggle ="modal" data-target="#showPictureModal{{photo.id}}">
-            <h5>{{item.name}}</h5>
+            <h5 class="title">{{item.name}}</h5>
 
             <img src="{{item.image.url}}" alt="{{item.name}}" class="img-responsive">
-            <p>Posted on: {{item.date_added}} </p>
+            <p= class="card-footer">Posted on: {{item.date_added}} </p>
         </div>
   {%endfor%}
   
