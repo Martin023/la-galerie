@@ -3,25 +3,21 @@
 {% block content %}
 {{block.super}}
 <div>
+  <div class="hero">
     <h3>Hello welcome to La-gallarie</h3>
-</div>
-<div class="img-container">
-
+  </div>
+  <div class="row container-fluid all-items">
     {% for item in image%}
-    <div class="images">
-        <h5 class="text-center"> {{ item.name }} </h5>
-        <img style=width:100% src="{{ item.image.url }}" class="img-responsive image" alt="{{item.name}}">
-    
-       <div class="details">
-          <p>Posted: {{item.date_added|timesince}}</p>
+        <div class = "col-md-3 card" data-toggle ="modal" data-target="#showPictureModal{{photo.id}}">
+            <h5>{{item.name}}</h5>
 
-          {% empty %}
-         <div class="row">
-          <h2 class="text-center">No images present</h2>
-          </div>
-        {% endfor %}
-       </div>
-    </div>
-    
+            <img src="{{item.image.url}}" alt="{{item.name}}" class="img-responsive">
+            <p>Posted on: {{item.date_added}} </p>
+        </div>
+  {%endfor%}
+  
+
+  </div>
+  
 </div>
 {% endblock %}

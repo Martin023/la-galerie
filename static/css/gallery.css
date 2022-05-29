@@ -1,17 +1,19 @@
 
 .img-container{
-    width: 100%;
-    display:flex;
+    
    
 }
-.images {
+.card {
+    border: hidden;
     width:30%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
     transition: 0.3s;
 }
-.images:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
-.details {
-    padding: 2px 16px;
+.all-items{
+    display: flex;
+    justify-content: center;
+    gap: 3%;
 }
