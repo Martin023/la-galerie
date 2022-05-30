@@ -16,6 +16,9 @@ import cloudinary.uploader
 import cloudinary.api
 # from decouple import config
 import django_heroku
+from dotenv import load_dotenv,find_dotenv
+
+load_dotenv(find_dotenv())
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,10 +90,10 @@ WSGI_APPLICATION = 'galleria.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME') ,
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD':os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.getenv('DB_NAME') ,
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD':os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
     }
 }
 
@@ -134,9 +139,9 @@ STATICFILES_DIRS = [
 
 
 cloudinary.config( 
-  cloud_name = os.environ.get('CLOUD_NAME'), 
-  api_key = os.environ.get('API_KEY'), 
-  api_secret = os.environ.get('API_SECRET')
+  cloud_name = os.getenv('CLOUD_NAME'), 
+  api_key = os.getenv('API_KEY'), 
+  api_secret = os.getenv('API_SECRET')
 )
 
 # Default primary key field type
