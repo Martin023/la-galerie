@@ -15,7 +15,7 @@ from pathlib import Path
 import cloudinary.uploader
 import cloudinary.api
 from decouple import config,Csv
-
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = conf('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,9 +85,10 @@ WSGI_APPLICATION = 'galleria.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': conf('DB_NAME') ,
-        'USER': conf('DB_USER'),
-        'PASSWORD':conf('DB_PASSWORD'),
+        'NAME': config('DB_NAME') ,
+        'USER': config('DB_USER'),
+        'PASSWORD':config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
     }
 }
 
@@ -134,9 +135,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 cloudinary.config( 
-  cloud_name = conf('CLOUD_NAME'), 
-  api_key = conf('API_KEY'), 
-  api_secret = conf('API_SECRET')
+  cloud_name = config('CLOUD_NAME'), 
+  api_key = config('API_KEY'), 
+  api_secret = config('API_SECRET')
 )
 
 # Default primary key field type
