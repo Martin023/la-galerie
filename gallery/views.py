@@ -23,3 +23,8 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'art/search.html',{"message":message})
 
+def location_results(request,loc_id):
+    
+    photo=Image.search_by_loc(loc_id)
+
+    return render(request,'art/location.html',{"photo":photo })

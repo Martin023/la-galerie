@@ -1,0 +1,27 @@
+{%extends 'art/base.html'%} 
+{% block content %}
+<div class="container location-height">
+
+  <div class="location-hero">
+  <h4> Photos in {{item.location}}</h4>
+
+  </div>
+
+  <div class="row">
+
+    {% if photo %}
+  <div class="row container-fluid all-items">
+    {% for item in photo%}
+    <div class = "col-md-3 card" data-toggle ="modal" data-target="#showPictureModal{{item.id}}">
+        <h5 class="title">{{item.name}}</h5>
+  
+        <img src="{{item.image.url}}" alt="{{item.name}}" class="img-responsive">
+        <p class="card-footer">Posted on: {{item.date_added}} </p>
+    </div>
+  {%endfor%}
+  </div>
+ 
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -60,6 +60,10 @@ class Image(models.Model):
         photo = cls.objects.filter(category__name__icontains=search_term)
         return photo
 
+    @classmethod
+    def search_by_loc(cls,loc_id):
+        photo = cls.objects.filter(location__id__icontains=loc_id)
+        return photo
 
 
 

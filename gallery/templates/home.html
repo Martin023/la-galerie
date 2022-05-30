@@ -27,7 +27,7 @@
 
     <div class="locations">
       {%for item in location%}
-      <a class="loc" href="/?location={{item.id}}"><button type="button" class="btn btn-outline-success">{{item.name}}</button></a>
+      <a class="loc" href="/location/{{item.id}}"><button type="button" class="btn btn-outline-success">{{item.name}}</button></a>
       {%endfor%}
     </div>
 
