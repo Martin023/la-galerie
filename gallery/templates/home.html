@@ -1,4 +1,4 @@
-{%extends 'base.html'%}
+{%extends 'art/base.html'%}
 
 {% block content %}
 {{block.super}}
@@ -8,7 +8,7 @@
       <!-- Adding a search form  -->
       <div class="col-sm-4 col-md-4 position">
 
-        <form class="navbar-form" role="search" action='{% url 'search_results' %}'>
+        <form class="navbar-form" role="search" action="{%  url 'search_results' %}">
 
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search Art" name="art">

@@ -1,0 +1,31 @@
+{%extends 'art/base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row welcome">
+    {% if photo %}
+      <h4 align="center">Found {{ photo|length }} items in {{message}}</h4>
+    {% else %}
+      <h4 align="center"> OOps!! seems we cannot find the photos you are looking for {{message}}</h4>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if photo %}
+  <div class="row container-fluid all-items">
+    {% for item in photo%}
+    <div class = "col-md-3 card" data-toggle ="modal" data-target="#showPictureModal{{item.id}}">
+        <h5 class="title">{{item.name}}</h5>
+  
+        <img src="{{item.image.url}}" alt="{{item.name}}" class="img-responsive">
+        <p class="card-footer">Posted on: {{item.date_added}} </p>
+    </div>
+  {%endfor%}
+  </div>
+ 
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

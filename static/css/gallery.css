@@ -25,8 +25,8 @@
     margin-bottom: 0%;
 }
 nav{
-    background-color: rgb(24, 24, 80);
-    color:#fff;
+    background-color: rgb(78, 78, 37);
+    justify-content: space-between;
 }
 
 .navbar{
@@ -35,5 +35,21 @@ nav{
 .hero{
     padding:5%;
     display:flex;
+    
+    
+}
+.welcome{
+    padding :5%;
+}
+.nav {
+    color:red;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0% auto;
     justify-content: space-between;
+}
+.ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
