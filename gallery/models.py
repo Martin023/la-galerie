@@ -9,6 +9,15 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+    
+    def save_location(self):
+        self.save()
+
+    @classmethod
+    def allLocations(cls):
+        location=cls.objects.all()
+        return location
+
 class Category(models.Model):
     name = models.CharField(max_length=30)
 

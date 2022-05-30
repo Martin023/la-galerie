@@ -1,13 +1,14 @@
 from django.shortcuts import render
 import datetime as dt
-from gallery.models import Category, Image
+from gallery.models import Category, Image, Location
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 def home(request):
     images= Image.display_image()
+    locations = Location.allLocations()
     
-    return render(request,'home.html',{"image":images} )
+    return render(request,'home.html',{"image":images, "location":locations} )
 
 def search_results(request):
 

@@ -65,5 +65,16 @@ nav{
 .footer{
     background-color: rgb(196, 150, 26);
     margin-top:2%;
-    margin-bottom: 0%;
+    margin-bottom: 0px;
+}
+.locations{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+.loc-container{
+    padding: 15px;
+}
+strong{
+    color: rgb(196, 150, 26);
 }

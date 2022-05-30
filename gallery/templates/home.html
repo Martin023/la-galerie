@@ -4,7 +4,7 @@
 {{block.super}}
 <div>
   <div class="hero">
-    <h3>Hello welcome to La-gallarie</h3>
+    <h3> Art - <strong>gallarie</strong></h3>
       <!-- Adding a search form  -->
       <div class="col-sm-4 col-md-4 position">
 
@@ -20,6 +20,17 @@
         </form>
       </div>
       <!-- search form end -->
+  </div>
+  <div class=" loc-container container-fluid">
+
+    <p align="center"><b>Filter by country:</b> </p>
+
+    <div class="locations">
+      {%for item in location%}
+      <a class="loc" href="/?location={{item.id}}"><button type="button" class="btn btn-outline-success">{{item.name}}</button></a>
+      {%endfor%}
+    </div>
+
   </div>
   <div class="row container-fluid all-items">
     {% for item in image%}
