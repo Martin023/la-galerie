@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 import cloudinary.uploader
 import cloudinary.api
-
+from decouple import config,Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-us*o31933^14@2nzqa-s4(c(3c4_0j977(uwy)g*p&g)=&nho-'
+SECRET_KEY = conf('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'galleria.urls'
@@ -84,9 +85,9 @@ WSGI_APPLICATION = 'galleria.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gallery',
-        'USER': 'martin023',
-        'PASSWORD':'0000',
+        'NAME': conf('DB_NAME') ,
+        'USER': conf('DB_USER'),
+        'PASSWORD':conf('DB_PASSWORD'),
     }
 }
 
@@ -133,12 +134,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 cloudinary.config( 
-  cloud_name = "lazycode", 
-  api_key = "385972747453778", 
-  api_secret = "y3jyqHSsae1XPZ8tkbQyL1ErgCU" 
+  cloud_name = conf('CLOUD_NAME'), 
+  api_key = conf('API_KEY'), 
+  api_secret = conf('API_SECRET')
 )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
