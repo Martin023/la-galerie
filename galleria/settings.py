@@ -7,7 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.0/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/4.0/ref/settings/
+https://docs.djangoproject.com/en/pip4.0/ref/settings/
 """
 import cloudinary
 import os
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'galleria.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config('DB_NAME') ,
         'USER': config('DB_USER'),
         'PASSWORD':config('DB_PASSWORD'),
@@ -131,8 +131,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
 
 cloudinary.config( 
   cloud_name = config('CLOUD_NAME'), 
@@ -144,7 +143,7 @@ cloudinary.config(
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -156,4 +155,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 django_heroku.settings(locals())
