@@ -8,6 +8,8 @@ Description of the treasured items is also given including vital informaton incl
 loaction and why it is important.
 
 ## Screenshot of the page
+![Screenshot from 2022-05-31 10-37-00](https://user-images.githubusercontent.com/36125591/171118665-8c8864a3-cb23-4254-82ed-d64013767703.png)
+
 
 ## Setup/Installation Requirements
 * Any python code editor and runner.
