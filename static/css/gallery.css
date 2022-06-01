@@ -85,4 +85,6 @@ strong{
 .modal img{
     width:100%;
 }
-.
+.modal #link{
+    overflow: auto;
+}
