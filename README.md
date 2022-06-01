@@ -10,6 +10,9 @@ loaction and why it is important.
 ## Screenshot of the page
 ![Screenshot from 2022-05-31 10-37-00](https://user-images.githubusercontent.com/36125591/171118665-8c8864a3-cb23-4254-82ed-d64013767703.png)
 
+## Live demo
+https://art023.herokuapp.com/
+
 
 ## Setup/Installation Requirements
 * Any python code editor and runner.
@@ -27,14 +30,14 @@ loaction and why it is important.
 * Serve on your browser ( python manage.py runserver) 
 
 ## Known bugs: 
-Displaying modal for description.
+Tested on Chrome and firefox web browsers and its working okay. If you encounter any errors, create a new issue
+on the issues page and kindly reach out for any clarifications.
 
 ## TO-DO's
-* Fix modal bug
-* Work on the User interface
+* User interface furnishing and optimisation.
 
 ## Technologies used
-Html, css, bootstrap, figma, python-django
+Html, css, bootstrap, figma, python-django. fontawesome 
 
 ## Support and contact 
 Reach me through my contacts in my socials or personal website at :
