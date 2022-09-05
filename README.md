@@ -37,11 +37,11 @@ on the issues page and kindly reach out for any clarifications.
 * User interface furnishing and optimisation.
 
 ## Technologies used
-Html, css, bootstrap, figma, python-django. fontawesome 
+Html, css, bootstrap, figma, python-django, font-awesome icons.
 
 ## Support and contact 
-Reach me through my contacts in my socials or personal website at :
+Reach me through my contacts in my socials or personal website as pinned on my bio.
 
 ### License 
 MIT licence
-Copyright (c) 2022
+Copyright 2022
